@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 1</title>
+</head>
+<body>
+    <div id="div1">
+        Click me!
+    </div>
+    <script>
+        window.addEventListener('load', onPageLoad);
+        function onPageLoad() {
+            console.info('page loaded');
+            var div1 = document.getElementById('div1');
+            setTimeout(function () {
+                div1.style.backgroundColor = "green";
+            }, 2000);
+            div1.addEventListener('click', function (e) {
+                var p1 = document.createElement('div');
+                p1.innerHTML = 'Div adaugat dinamic';
+                div1.appendChild(p1);
+            })
+            div1.addEventListener('mouseenter', function (e) {
+                div1.style.cursor = 'pointer';
+                div1.style.backgroundColor = 'blue';
+                div1.style.opacity = 0.5;
+            })
+        }
+    </script>
+</body>
+</html>
